@@ -25,13 +25,13 @@ class Frag:
     accept = None 
     
     # Constructor.
-    def__init__(self, start , accept):
-    self.start = start 
-    self.accept = accept
+    def __init__(self, start , accept):
+        self.start = start 
+        self.accept = accept
     
-myInstance = State(label='a', edges=[])
-myotherinstance = State(edges=[myInstance])
-myFrag = Frag(myinstance , myotherinstance)
+myinstance = State(label='a', edges=[])
+myotherinstance = State(edges=[myinstance])
+myfrag = Frag(myinstance , myotherinstance)
 
 print(myinstance.label)
 print(myotherinstance.edges[0])
