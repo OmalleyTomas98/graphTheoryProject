@@ -14,7 +14,7 @@ A Python  Language Non-Deterministic Finite Automaton Builder from implementatio
  Module     :  Graph Theory 
  Program    :  NFA Graph Theory Project
  Weighting  :  50% 
- Due Date   :  NAN
+ Due Date   :  April 3rd 2020
  Submission :  Via Github repository 
 
 Project Description: You must write a program in the Python programming language [2] that can
@@ -26,17 +26,17 @@ re package from the Python standard library nor any other external library
  +++ Features +++
 	-command line interface menu 
 	-Build a NFA to check a Regular Expression 
-	-Output whether a match or a fail
+	-Output whether a match or a mismatch
 ----------------------------
-Program Packaging break down 
+Program Packaging break down  
 ----------------------------
 ----------------------------
 Project Build 
 
-	-Parse the regular expression from infix to postfix notation.
-	-Build a series of small NFA’s for parts of the regular expression.
-	-Use the smaller NFA’s to create the overall NFA
-	-Implement the matching algorithm using the NFA.
+	-(i)Parse the regular expression from infix to postfix notation.
+	-(ii)Build a series of small NFA’s for parts of the regular expression.
+	-(iii)Use the smaller NFA’s to create the overall NFA
+	-(iv)Implement the matching algorithm using the NFA.
 
 
 Contents found in g00361128 Python Github Repository 
@@ -47,12 +47,10 @@ Python file holding the main 7 pieces of functions to create the Non-Determinist
 -README.MD :) - The file you are reading which documents and explains the fundamental/core features and obstacles found in the Python  project.
 
 
-
-
 ********************************************
 *		                           		   *
 * Dept- Computer Science & Applied Physics *
-*         Text Language Detector           *
+*         Graph Theory NFA builder         *
 *	 	                          		   *
 ********************************************
 
