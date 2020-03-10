@@ -1,5 +1,5 @@
-#Tomas Omalley
-# The shunting yard Algorithm
+#Tomas Omalley 
+# The shunting yard Algorithm 
 
 #The input
 infix = "(a|b|).c*"
@@ -19,7 +19,7 @@ postfix = []
 # Operator precedence
 prec = {'*': 100 , '.': 80, '|': 60, ')': 40 , '(':20}
 
-# Loop through the input one character at a time.
+# Loop through the input one character at a time. 
 while infix:
 	# Pop a character from the input
 	c=infix.pop()
@@ -43,6 +43,6 @@ while infix:
 	else:
 		# Typicallu , we just push the character to the output.
 		postfix.append(c)
-
+		
 while opers:
 	postfix.append(opers.pop())
