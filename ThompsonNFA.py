@@ -9,16 +9,15 @@ class State:
 	label= None
 
 	# Is this an accept state?
-
 	# Constructor for the class.
 	def __init__(self, label=None , edges=[]):
 		self.edges=edges
 		self.label=label
 
-myinstance = State(label='a' , edges=[])
-myotherinstance = State(edges=[myinstance])
-print(myinstance.label)
-print(myotherinstance.edges[0])
+#myinstance = State(label='a' , edges=[])
+#myotherinstance = State(edges=[myinstance])
+#print(myinstance.label)
+#print(myotherinstance.edges[0])
 
 class Fragment:
 	# start state of NFA Fragment
@@ -35,10 +34,8 @@ def shunt(infix):
 	# Convert input input  to a stack ish list
 	infix = list(infix)[::-1]
 
-
 	#Tomas Omalley 
 	# The shunting yard Algorithm 
-
 	# Convert input to a stack like list.
 
 	# Operator Stack.
@@ -80,9 +77,7 @@ def shunt(infix):
 
 	return ''.join(postfix)
 
-
-
-def regex_compile(infix):
+def compile(infix):
 	postfix = shunt(infix)
 	postfix = list(postfix)[::-1]
 
@@ -98,9 +93,9 @@ def regex_compile(infix):
 			# Point frag2s accept state at frag 1s start state.
 			frag2.accept.edges.append(frag1.start)
 			# Create new instance of fragment to represent the new NFA. 
-			newfrag = Fragment(frag2.start.frag1.accept)
+			newfrag = Fragment(frag2.start , frag1.accept)
 			# Push the new NFA to the NFA stack
-			nfa_stack.append(newfrag)
+			#nfa_stack.append(newfrag)
 		elif c =='|':
 			# Pop two fragments off the stack.
 			frag1 = nfa_stack.pop()
@@ -112,39 +107,73 @@ def regex_compile(infix):
 			frag2.accept.edges.append(accept)
 			frag1.accept.edges.append(accept)
 			newfrag=Fragment(start,accept)
-			nfa_stack.append(newfrag)
+			#nfa_stack.append(newfrag)
 		elif c =='*':
 			# 
 			frag = nfa_stack.pop()
 			accept = State()
-			start = State(edges[frag.start,accept])
-			frag.accept.edges.append(frag.accept)
+			start = State(edges=[frag.start,accept])
+			frag.accept.edges =[frag.start , accept]
 			newfrag = Fragment(start , accept)
-			nfa_stack.append(newfrag)
+			#nfa_stack.append(newfrag)
 
 		else:
 			accept = State()
 			start = State(label=c, edges=[accept])
+
 			newfrag =  Fragment(start,accept)
-			nfa_stack.append(newfrag)
+		nfa_stack.append(newfrag)
 
+	return nfa_stack.pop()
 
+# Add a state to a set, and follow all of the epsilon arorws.
+def followes (state , current):
+	#Only do something when we havent already seen the state.
+	if state  not in current:
+	# Put the state itself into current
+		current.add(state)
+		# see whether state is labelled by e(pslion).
+		if state.label is None:
+		# Loop through the states pointed to by this state.
+			for x in state.edges:
+			# Follow all of their epsilson too
+				followes(x,current)
 
-
-def match(regex,s):
+def match(regex, s):
 	# This function will return true if and only if the regular expression
 	# Regex fully matches the string s .It False otherwise.
 
 	# Compile the regualr exoression into nfa
-	nfa = regex_compile(regex) 
-	return nfa
+	nfa = compile(regex) 
 
-print(match("a.b|b*", "bbbbb"))
+	# Try to macth the regular exoression  to the string s.
+	# The current set of states .
+	current =  set()
+	# Add the first state , and follow all e(psilon) arrows.
+	followes(nfa.start, current)
+
+	# The previous set of states.
+	previous = set ()
 
 
+	# loop over characters in s 
+	for  c in s:
+		# Keep track of where we were.
+		previous = current
+		# Create a new empty set for the states we're about to be in
+		current = set ()
+		# Loop through the previous states.
+		for state in previous:
+			# Only follow arrows not labelled by (epsilon)
+			if state.label is not None:
+				# If the label of the state is equal to the character we've read:
+				if state.label == c:
+					# Add the state(s) at the end of the arrow to current.
+					followes(state.edges[0], current)
 
 
+	# Ask the NFA if it matches the string s.
+	return nfa.accept in current
 
 
-
-
+print(match("a.b|b*", "bbbbbbbbb"))
