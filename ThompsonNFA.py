@@ -14,11 +14,6 @@ class State:
 		self.edges=edges
 		self.label=label
 
-#myinstance = State(label='a' , edges=[])
-#myotherinstance = State(edges=[myinstance])
-#print(myinstance.label)
-#print(myotherinstance.edges[0])
-
 class Fragment:
 	# start state of NFA Fragment
 	start= None
@@ -143,6 +138,16 @@ def match(regex, s):
 	# This function will return true if and only if the regular expression
 	# Regex fully matches the string s .It False otherwise.
 
+	print("**********************************************************")
+	print("*		                                         *")
+	print("* Dept- Computer Science & Applied Physics               *")
+	print("*         Graph Theory NFA builder        		 *")
+	print("*	 	                          	         *")
+	print("**********************************************************")
+
+	s= raw_input("Please enter a regular expression:")
+
+
 	# Compile the regualr exoression into nfa
 	nfa = compile(regex) 
 
@@ -154,7 +159,6 @@ def match(regex, s):
 
 	# The previous set of states.
 	previous = set ()
-
 
 	# loop over characters in s 
 	for  c in s:
@@ -176,4 +180,4 @@ def match(regex, s):
 	return nfa.accept in current
 
 
-print(match("a.b|b*", "bbbbbbbbb"))
+print(match("a.b|b*", ""))
