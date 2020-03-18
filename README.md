@@ -1,7 +1,7 @@
-# graphTheoryProject
+ graph Theory Project
 NFA Graph Theory Project : Module - Graph Theory : Year - 3
 
-# Non-Deterministic Finite Automaton Builder 
+ Non-Deterministic Finite Automaton Builder 
 A Python  Language Non-Deterministic Finite Automaton Builder from implementation of Regular Expressions.
 3rd Year Software Development Project for module : Graph Theory
 
