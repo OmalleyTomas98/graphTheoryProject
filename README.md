@@ -1,6 +1,6 @@
 
 <p align="center"> 
-<h1 align="center">NFA Builder </h1>
+<h1 align="center">Graph Theory NFA Builder </h1>
 
   
   <a href="https://github.com/github_username/repo">
@@ -29,6 +29,9 @@ re package from the Python standard library nor any other external library.
 
 ## Installation
  
+- Download [git](https://git-scm.com/downloads) to your machine if not already installed.
+- Download [python](https://www.python.org/downloads/) to your machine if not already installed.
+_______________________________________________________________________________________________
 - Open your systems CLI **Windows Command line** / **MAC OSX Terminal or Linux Terminal**
 - Type the follow commands
 - git clone  https://github.com/OmalleyTomas98/graphTheoryProject.git
@@ -63,13 +66,14 @@ re package from the Python standard library nor any other external library.
     
 - **Regular Expression**
   - A regular expression, regex or regexp is a sequence of characters that define a search pattern. Usually such patterns are used by string searching algorithms for "find" or "find and replace" operations on strings, or for input validation.There are are a large number of regex operators but I will just cover the operators used in my program. 
-   - The most common reguakr expressions :
+   - The most common regular expressions :
       
       
             -    Kleene Star   : *
             -    Or            : |
             -    Concatinate.  : .
             -    Example regular in match function of NFA program:
+            ___________________________________________________________________
             -    print(match("a.b|b*", "bbbb")) = A and b or Many B's is = "bbb"
             -    Returns True in output
         
@@ -77,9 +81,18 @@ re package from the Python standard library nor any other external library.
  - **Pumping lemma** 
     - The pumping lemma is often used to prove that a particular language is non-regular: a proof by contradiction (of the language's regularity) may consist of exhibiting a word (of the required length) in the language that lacks the property outlined in the pumping lemma.
 
+-  **String Matching** 
+   - String matching is completed using the match Function: 
+      ```py 
+          def match(regex, s):
+           # This function will return true if and only if the regular expression
+           # Regex fully matches the string s .It False otherwise.
+          # Ask the NFA if it matches the string s.
+          return nfa.accept in current
+         } 
+      ``` 
 ## Program Running
 
-  
 ## Conclusion
 
 ## References
