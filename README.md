@@ -1,12 +1,10 @@
 
 <p align="center"> 
 <h1 align="center">Graph Theory NFA Builder </h1>
-
   
   <a href="https://github.com/github_username/repo">
     <img src="OpenScreen.png" alt="" width="1000" height="500">
   </a>
-
 ## Description
  <p align="left">
 You must write a program in the Python programming language [2] that can
@@ -46,16 +44,46 @@ ________________________________________________________________________________
 - Output whether a match or a mismatch
 
 ## Research
+- **Python**
+  - Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages
+  
+<p align="center"> 
+ <a href="https://github.com/github_username/repo">
+        <img src="graphTheoryImages/python.png" alt="" width="750" height="250">
+  </a>
+</p> 
+
 - **Non-deterministic finite automaton** (NFA)
     - A nondeterministic finite automaton (NFA), or nondeterministic finite-state machine, does not need to obey these restrictions. In particular, every DFA is also an NFA. Sometimes the term NFA is used in a narrower sense, referring to an NFA that is not a DFA.
     
+<p align="center"> 
+
+  <a href="https://github.com/github_username/repo">
+        <img src="graphTheoryImages/NFAdiagram.png" alt="" width="750" height="250">
+  </a>
+</p> 
+
 - **Thompson’s construction**
   - In computer science, Thompson's construction algorithm, also called the McNaughton-Yamada-Thompson algorithm[1], is a   method of transforming a regular expression into an equivalent nondeterministic finite automaton (NFA).[2] This NFA can be used to match strings against the regular expression. This algorithm is credited to Ken Thompson.Ken Thompson is an American pioneer of computer science. Thompson worked at Bell Labs for most of his career where he designed and implemented the original Unix operating system. I will be using this algorithm to convert a regular Expression into a NFA.
   
+<p align="center"> 
+
+<a href="https://github.com/github_username/repo">
+        <img src="graphTheoryImages/ThompsosnConstruction.png" alt="" width="750" height="250">
+  </a>
+    </p> 
+
 - **The Shunting yard Algorithm** 
     - In computer science, the shunting-yard algorithm is a method for parsing mathematical expressions specified in infix notation. It can produce either a postfix notation string, also known as Reverse Polish notation, or an abstract syntax tree.
-    
    
+ <p align="center"> 
+
+<a href="https://github.com/github_username/repo">
+        <img src="graphTheoryImages/ShuntingYardAlgorithm.png	" alt="" width="750" height="250">
+  </a>
+
+ </p> 
+
 - **Infix & Postfix Notation**
    - Infix notation is the notation commonly used in arithmetical and logical formulae and statements. It is characterized by the placement of operators between operands—"infixed operators"—such as the plus sign in 2 + 2.
  
@@ -63,6 +91,13 @@ ________________________________________________________________________________
   
     - Infix notation is simply the way in which humans interact with numbers e.g 2+2=4 , However computers  do not operate in this manner they must use postfix notation e.g 22add . A computer uses a stack data structure to hold and push/pop all the operators e.g (+,-,/) and operanders e.g (1,10,39) 
     
+<p align="center"> 
+
+<a href="https://github.com/github_username/repo">
+        <img src="graphTheoryImages/infixVSpostfix.jpg" alt="" width="350" height="450">
+  </a>
+</p> 
+
     
 - **Regular Expression**
   - A regular expression, regex or regexp is a sequence of characters that define a search pattern. Usually such patterns are used by string searching algorithms for "find" or "find and replace" operations on strings, or for input validation.There are are a large number of regex operators but I will just cover the operators used in my program. 
