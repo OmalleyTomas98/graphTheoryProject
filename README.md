@@ -139,3 +139,4 @@ ________________________________________________________________________________
 - [6] Infix_Notation https://en.wikipedia.org/wiki/Infix_notation
 - [7] Pumping Lemma Algorithm https://en.wikipedia.org/wiki/Pumping_lemma_for_regular_languages
 - [8] NFA https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton
+- [9] Python https://www.python.org/doc/essays/blurb/
