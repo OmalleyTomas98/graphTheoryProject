@@ -128,6 +128,11 @@ ________________________________________________________________________________
       ``` 
 ## Program Running
 
+<p align="center"> 
+        <img src="graphTheoryImages/RunningProgram" alt="" width="750" height="250">
+  </a>
+</p> 
+
 ## Conclusion
 
 ## References
