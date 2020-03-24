@@ -3,7 +3,7 @@
 <h1 align="center">Graph Theory NFA Builder </h1>
   
   <a href="https://github.com/github_username/repo">
-    <img src="OpenScreen.png" alt="" width="1000" height="500">
+    <img src="graphTheoryImages/OpenScreen.png" alt="" width="1000" height="500">
   </a>
 ## Description
  <p align="left">
@@ -23,7 +23,7 @@ re package from the Python standard library nor any other external library.
 | `Program` | NFA Graph Theory Project|
 | `Langauge` | Python 3|
 | `Weighting` | 50% |
-| `Year of Stusy` | 3 |
+| `Year of Study` | 3 |
 
 ## Installation
  

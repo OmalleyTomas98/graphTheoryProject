@@ -2,16 +2,11 @@
 # Classes used in Thompsons construction
 # Week 6 - 17-02-2020
 class State:
-	# Every state has 0,1 or 2 edges from it
-	edges = []
-
-	#Label for the arrows , None means epsilon
-	label= None
-
-	# Is this an accept state?
 	# Constructor for the class.
 	def __init__(self, label=None , edges=[]):
+		# Every state has 0,1 or 2 edges from it
 		self.edges=edges
+		#Label for the arrows , None means epsilon
 		self.label=label
 
 class Fragment:
@@ -138,15 +133,6 @@ def match(regex, s):
 	# This function will return true if and only if the regular expression
 	# Regex fully matches the string s .It False otherwise.
 
-	print("**********************************************************")
-	print("*		                                         *")
-	print("* Dept- Computer Science & Applied Physics               *")
-	print("*         Graph Theory NFA builder        		 *")
-	print("*	 	                          	         *")
-	print("**********************************************************")
-
-	s= raw_input("Please enter a regular expression:")
-
 
 	# Compile the regualr exoression into nfa
 	nfa = compile(regex) 
@@ -179,5 +165,3 @@ def match(regex, s):
 	# Ask the NFA if it matches the string s.
 	return nfa.accept in current
 
-
-print(match("a.b|b*", ""))
