@@ -13,7 +13,8 @@ print("* Dept- Computer Science & Applied Physics               *")
 print("*         Graph Theory NFA builder        		 *")
 print("*	 	                          	         *")
 print("**********************************************************")
+UserRegex= input("Please enter a regular expression: e.g  (a.b|b*) : ")
+print("**********************************************************")
+s= input("Please enter a single string of text: e.g bbbb :")
 
-s= input("Please enter a regular expression:")
-
-print(Regex.match("a.b|b*",s))
+print("Match Result = " , Regex.match(UserRegex,s))
