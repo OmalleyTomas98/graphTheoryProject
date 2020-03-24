@@ -5,6 +5,7 @@
   <a href="https://github.com/github_username/repo">
     <img src="graphTheoryImages/OpenScreen.png" alt="" width="1000" height="500">
   </a>
+  
 ## Description
  <p align="left">
 You must write a program in the Python programming language [2] that can
@@ -79,7 +80,7 @@ ________________________________________________________________________________
  <p align="center"> 
 
 <a href="https://github.com/github_username/repo">
-        <img src="graphTheoryImages/ShuntingYardAlgorithm.png	" alt="" width="750" height="250">
+        <img src="graphTheoryImages/ShuntingYardAlgorithm.png" alt="" width="750" height="250">
   </a>
 
  </p> 
@@ -127,13 +128,14 @@ ________________________________________________________________________________
          } 
       ``` 
 ## Program Running
-
+  - Underneath is a screenshot of the program running on my local machine 
 <p align="center"> 
-        <img src="graphTheoryImages/RunningProgram" alt="" width="750" height="250">
+        <img src="graphTheoryImages/RunningProgram.png" alt="" width="750" height="250">
   </a>
 </p> 
 
 ## Conclusion
+- Overall I was pleased with the application I created and the obstacles of learning a new computing language(Python) and the many algorithms implemented/Researched such as The shunting Yard algorithm and the process of converting infix to postfix.If you apply the commands in this document and run in the correct enviroment you will be successfully able to run this program and build NFAs.  
 
 ## References
 - [1] Python  https://www.python.org/dev/peps/pep-0008/
