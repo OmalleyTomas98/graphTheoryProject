@@ -34,7 +34,7 @@ def shunt(infix):
 	infix = list(infix)[::-1]
 
 	# Operator Stack Output list.
-
+ 
 	opers , postfix = [] ,[]
 
 	# Operator precedence
