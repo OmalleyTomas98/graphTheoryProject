@@ -1,38 +1,41 @@
-# Author Tomas O'Malley
-# Classes used in Thompsons construction
-# Week 6 - 17-02-2020
+# Author : Tomas O'Malley
+# ID : G0036128
+# PROGRAM : NFA BUILDER
+# Weighting  : 50%
+# Module : Graph Theory
+
 class State:
-	# Constructor for the class.
-	def __init__(self, label=None , edges=[]):
-		# Every state has 0,1 or 2 edges from it
-		self.edges=edges
-		#Label for the arrows , None means epsilon
-		self.label=label
+
+  """A state with one or two edges, all edges labelled by label."""
+
+  # Constructor.
+  def __init__(self, label=None, edges=None):
+    # Every state has 0, 1, or 2 edges from it.
+    self.edges = edges if edges else []
+    # Label for the arrows. None means epsilon.
+    self.label = label
 
 class Fragment:
-	# start state of NFA Fragment
-	start= None
-	# Accept state of NFA fragment
-	accept = None
+
+	"""An NFA Fragment with a start state and an accept state"""
 
 	# Constructor
 	def __init__(self , start , accept):
+		# start state of NFA Fragment
 		self.start = start
+		# Accept state of NFA fragment
 		self.accept = accept
 
 def shunt(infix):
+
+	"""Function which returns the infix expression in postfix"""
+
 	# Convert input input  to a stack ish list
 	infix = list(infix)[::-1]
 
-	#Tomas Omalley 
-	# The shunting yard Algorithm 
-	# Convert input to a stack like list.
+	# Operator Stack Output list.
 
-	# Operator Stack.
-	opers = []
-
-	# Output list.
-	postfix = []
+	opers , postfix = [] ,[]
 
 	# Operator precedence
 	prec = {'*': 100 , '.': 80, '|': 60, ')': 40 , '(':20}
@@ -68,9 +71,15 @@ def shunt(infix):
 	return ''.join(postfix)
 
 def compile(infix):
+
+	"""Returns an NFA Fragment representing the infix regular expression """
+
+	# Convert infix to postfix
 	postfix = shunt(infix)
+	# Make a postfix  stack of characters 
 	postfix = list(postfix)[::-1]
 
+	# A stack for NFA Fragemnts
 	nfa_stack = []
 
 	while postfix:
@@ -80,12 +89,13 @@ def compile(infix):
 			# Pop two fragments off the stack
 			frag1=nfa_stack.pop()
 			frag2=nfa_stack.pop()
-			# Point frag2s accept state at frag 1s start state.
+			# Point frags accept state at frag 1s start state.
 			frag2.accept.edges.append(frag1.start)
-			# Create new instance of fragment to represent the new NFA. 
-			newfrag = Fragment(frag2.start , frag1.accept)
-			# Push the new NFA to the NFA stack
-			#nfa_stack.append(newfrag)
+			# new start state is frag 2's
+			start = frag2.start
+			# new accept state is frag 2's
+			accept = frag1.accept
+			newfrag = Fragment(start , accept)
 		elif c =='|':
 			# Pop two fragments off the stack.
 			frag1 = nfa_stack.pop()
@@ -96,28 +106,32 @@ def compile(infix):
 			# Point the old accept states at the new one
 			frag2.accept.edges.append(accept)
 			frag1.accept.edges.append(accept)
-			newfrag=Fragment(start,accept)
-			#nfa_stack.append(newfrag)
+		
 		elif c =='*':
-			# 
+			# Pop a single fragment off the stack
 			frag = nfa_stack.pop()
+			# Create new start and accept .
 			accept = State()
 			start = State(edges=[frag.start,accept])
+			# Point the arrows.
 			frag.accept.edges =[frag.start , accept]
-			newfrag = Fragment(start , accept)
-			#nfa_stack.append(newfrag)
+		
 
 		else:
 			accept = State()
 			start = State(label=c, edges=[accept])
 
 			newfrag =  Fragment(start,accept)
+		# Create new instance of Fragment to represent the new NFA
 		nfa_stack.append(newfrag)
 
+	# Push the new NFA to the Stack
 	return nfa_stack.pop()
 
 # Add a state to a set, and follow all of the epsilon arorws.
+
 def followes (state , current):
+
 	#Only do something when we havent already seen the state.
 	if state  not in current:
 	# Put the state itself into current
@@ -130,7 +144,8 @@ def followes (state , current):
 				followes(x,current)
 
 def match(regex, s):
-	# This function will return true if and only if the regular expression
+
+	"""This function will return true if and only if the regular expression"""
 	# Regex fully matches the string s .It False otherwise.
 
 
@@ -165,3 +180,19 @@ def match(regex, s):
 	# Ask the NFA if it matches the string s.
 	return nfa.accept in current
 
+if __name__ == "__main__":
+	tests = [
+
+	["a.b|b*" , "bbbb" , True],
+	["a.b|b*" , "bbxxb" , False],
+	["a.b" , "ab" , True]
+
+	]
+
+	"""An array of tests for the program"""
+	for test in tests:
+		assert match(test[0] , test[1]) == test[2], test[0] + ("Should" if test[2]  else "should not")+"match" + test[1]
+
+	#Attempt 1  testing using Assert Method
+	#assert match("a.b|b*" , "bbbbbbbb") , "a.b|b* should match bbbb"
+	#assert not match("a.b|b*" , "bbbbbbbbxxx") , "a.b|b*  not should match bbbbbbbbxxx"
