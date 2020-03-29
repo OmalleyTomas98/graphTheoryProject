@@ -3,7 +3,7 @@
 <h1 align="center">Graph Theory NFA Builder </h1>
   
   <a href="https://github.com/github_username/repo">
-    <img src="graphTheoryImages/OpenScreen.png" alt="" width="1000" height="500">
+    <img src="graphTheoryImages/googleCloud.jpg" alt="" width="1000" height="500">
   </a>
   
 ## Description
@@ -35,7 +35,7 @@ ________________________________________________________________________________
 - Type the follow commands
 - git clone  https://github.com/OmalleyTomas98/graphTheoryProject.git
 - cd graphTheoryProject
-- python Runner.py
+- python3  menu.py
 
 
 ## Features
@@ -43,6 +43,16 @@ ________________________________________________________________________________
 - Command line interface menu 
 - Build a NFA to check a Regular Expression 
 - Output whether a match or a mismatch
+
+
+## Development
+  | Header | Description |
+| --- | --- |
+| `Langauge` | Python 3  |
+| `Editor` | Vi |
+| `Enviroment` | Google Cloud Linux Debian CLI |
+
+
 
 ## Research
 - **Python**
@@ -127,6 +137,23 @@ ________________________________________________________________________________
           return nfa.accept in current
          } 
       ``` 
+      
+      
+## Testing  
+  - I conducted a series of short matching tests at the end of the development to determine if the Regular expression operators were working correctly. 
+  
+  - Here are the examples I tested in the Regex.py File
+    ```py 
+         
+            ["a.b|b*" , "bbbb" , True],
+            ["a.b|b*" , "bbxxb" , False],
+            ["a.b" , "ab" , True]
+
+            ]
+      ``` 
+  - All the test cases resulted in a pass clause after compiling the class and I was ready to finish the programs Development 
+  
+
 ## Program Running
   - Underneath is a screenshot of the program running on my local machine 
 <p align="center"> 
