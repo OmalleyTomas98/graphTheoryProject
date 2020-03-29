@@ -111,8 +111,9 @@ ________________________________________________________________________________
 
     
 - **Regular Expression**
-  - A regular expression, regex or regexp is a sequence of characters that define a search pattern. Usually such patterns are used by string searching algorithms for "find" or "find and replace" operations on strings, or for input validation.There are are a large number of regex operators but I will just cover the operators used in my program. 
-   - The most common regular expressions :
+  - A regular expression, regex or regexp is a sequence of characters that define a search pattern. Usually such patterns are used by string searching algorithms for "find" or "find and replace" operations on strings, or for input validation.There are are a large number of regex operators but I will just cover the operators used in my program.
+  
+   - The integrated common regular expressions in my program :
       
       
             -    Kleene Star   : *
@@ -145,12 +146,12 @@ ________________________________________________________________________________
   
   - Here are the examples I tested in the Regex.py File
     ```py 
-         
-            ["a.b|b*" , "bbbb" , True],
-            ["a.b|b*" , "bbxxb" , False],
-            ["a.b" , "ab" , True]
+         tests = [
+                         ["a.b|b*" , "bbbb" , True],
+                         ["a.b|b*" , "bbxxb" , False],
+                         ["a.b" , "ab" , True]
 
-            ]
+                 ]
       ``` 
   - All the test cases resulted in a pass clause after compiling the class and I was ready to finish the programs Development 
  
@@ -159,6 +160,7 @@ ________________________________________________________________________________
       - Menu.py : In the Menu file is where the program is executed from.It holds the menu system for the user to input a regular expresson + string and outputs the match/mismatch from the Regex.py file on fly as an import.
            ```py 
           import Regex
+          
           UserRegex= input("Please enter a regular expression: e.g  (a.b|b*) : ")
           print("**********************************************************")
           s= input("Please enter a single string of text: e.g bbbb :")
