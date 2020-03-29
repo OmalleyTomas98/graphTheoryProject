@@ -129,6 +129,7 @@ ________________________________________________________________________________
 
 -  **String Matching** 
    - String matching is completed using the match Function: 
+   
       ```py 
           def match(regex, s):
            # This function will return true if and only if the regular expression
@@ -152,8 +153,21 @@ ________________________________________________________________________________
             ]
       ``` 
   - All the test cases resulted in a pass clause after compiling the class and I was ready to finish the programs Development 
-  
+ 
+## Program Structure
+  - There a mulitple files included in this repository which came from adjusting to the python langauge and the google cloud VM enviroment. 
+      - Menu.py : In the Menu file is where the program is executed from.It holds the menu system for the user to input a regular expresson + string and outputs the match/mismatch from the Regex.py file on fly as an import.
+           ```py 
+          import Regex
+          UserRegex= input("Please enter a regular expression: e.g  (a.b|b*) : ")
+          print("**********************************************************")
+          s= input("Please enter a single string of text: e.g bbbb :")
 
+          print("Match Result = " , Regex.match(UserRegex,s))
+          ```
+          
+      - Regex.py : The Brains of the program
+  
 ## Program Running
   - Underneath is a screenshot of the program running on my local machine 
 <p align="center"> 
@@ -173,4 +187,6 @@ ________________________________________________________________________________
 - [6] Infix_Notation https://en.wikipedia.org/wiki/Infix_notation
 - [7] Pumping Lemma Algorithm https://en.wikipedia.org/wiki/Pumping_lemma_for_regular_languages
 - [8] NFA https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton
-- [9] Python https://www.python.org/doc/essays/blurb/
+- [9] Python https://www.python.org/doc/essays/blurb
+- [10] vi https://www.guru99.com/the-vi-editor.html
+- [11] Google Cloud https://cloud.google.com/gcp/getting-started
