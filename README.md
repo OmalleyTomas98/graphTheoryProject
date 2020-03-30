@@ -26,6 +26,10 @@ re package from the Python standard library nor any other external library.
 | `Weighting` | 50% |
 | `Year of Study` | 3 |
 
+
+## Documentation
+- A .pdf version of the document you are currently reading is currently avaiable in this Repo for offline use.
+ 
 ## Installation
  
 - Download [git](https://git-scm.com/downloads) to your machine if not already installed.
