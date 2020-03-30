@@ -155,7 +155,7 @@ ________________________________________________________________________________
       ``` 
   - All the test cases resulted in a pass clause after compiling the class and I was ready to finish the programs Development 
  
-## Program Structure
+## Program Code  Structure
   - There a mulitple files included in this repository which came from adjusting to the python langauge and the google cloud VM enviroment. 
       - Menu.py : In the Menu file is where the program is executed from.It holds the menu system for the user to input a regular expresson + string and outputs the match/mismatch from the Regex.py file on fly as an import.
            ```py 
@@ -167,9 +167,35 @@ ________________________________________________________________________________
 
           print("Match Result = " , Regex.match(UserRegex,s))
           ```
-          
-      - Regex.py : The Brains of the program
-  
+
+      - Regex.py : The Brains of the program . This file is responsible for creating the NFA and is imported as a module inside of the Menu.py classs.This file implements the algorithms described above such as the Shunting yard Algorithm , Postfix - Infix Notation  , Regular Expressions and Matching
+         
+      ```py 
+               def shunt(infix):
+
+                        """Function which returns the infix expression in postfix"""
+
+                        # Convert input input  to a stack ish list
+                        infix = list(infix)[::-1]
+
+                        # Operator Stack Output list.
+                       
+                        opers , postfix = [] ,[]
+
+                        # Operator precedence
+                        prec = {'*': 100 , '.': 80, '|': 60, ')': 40 , '(':20}
+                        
+                        
+      ```
+      
+   - Above is a short code snippet of my implementation of the shunting algorithm which takes in a postfix argument and returns in Infix Notation. A BOMDAS style is implemented to determine each of the operators precedence.
+   
+   
+   
+   
+   
+
+
 ## Program Running
   - Underneath is a screenshot of the program running on my local machine 
 <p align="center"> 
