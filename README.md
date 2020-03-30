@@ -191,10 +191,73 @@ ________________________________________________________________________________
    - Above is a short code snippet of my implementation of the shunting algorithm which takes in a postfix argument and returns in Infix Notation. A BOMDAS style is implemented to determine each of the operators precedence.
    
    
-   
-   
-   
+  - Each of the programs requirements are implemented in a more modular approach inside of Regex.py.The entire comes to one in the function   'def compile'. The function succesfully incorporates the modules/classes such as 'State' and 'Frag' and the function returns an NFA from a regular expression,and can use the NFA to check if the regular expression matches any given string of text
+  
+  ```py   
+  
+  
+  def compile(infix):
 
+	"""Returns an NFA Fragment representing the infix regular expression """
+
+	# Convert infix to postfix
+	postfix = shunt(infix)
+	# Make a postfix  stack of characters 
+	postfix = list(postfix)[::-1]
+
+	# A stack for NFA Fragemnts
+	nfa_stack = []
+
+	while postfix:
+		# pop a character from postfix.
+		c = postfix.pop()
+		if c =='.':
+			# Pop two fragments off the stack
+			frag1=nfa_stack.pop()
+			frag2=nfa_stack.pop()
+			# Point frags accept state at frag 1s start state.
+			frag2.accept.edges.append(frag1.start)
+			# new start state is frag 2's
+			start = frag2.start
+			# new accept state is frag 2's
+			accept = frag1.accept
+			newfrag = Fragment(start , accept)
+		elif c =='|':
+			# Pop two fragments off the stack.
+			frag1 = nfa_stack.pop()
+			frag2 = nfa_stack.pop()
+			# Create new start and accept states
+			accept = State()
+			start = State(edges=[frag2.start , frag1.start])
+			# Point the old accept states at the new one
+			frag2.accept.edges.append(accept)
+			frag1.accept.edges.append(accept)
+		
+		elif c =='*':
+			# Pop a single fragment off the stack
+			frag = nfa_stack.pop()
+			# Create new start and accept .
+			accept = State()
+			start = State(edges=[frag.start,accept])
+			# Point the arrows.
+			frag.accept.edges =[frag.start , accept]
+		
+
+		else:
+			accept = State()
+			start = State(label=c, edges=[accept])
+
+			newfrag =  Fragment(start,accept)
+		# Create new instance of Fragment to represent the new NFA
+		nfa_stack.append(newfrag)
+
+	# Push the new NFA to the Stack
+	return nfa_stack.pop()
+
+# Add a state to a set, and follow all of the epsilon arorws.
+  
+  
+  ```
 
 ## Program Running
   - Underneath is a screenshot of the program running on my local machine 
@@ -205,6 +268,10 @@ ________________________________________________________________________________
 
 ## Conclusion
 - Overall I was pleased with the application I created and the obstacles of learning a new computing language(Python) and the many algorithms implemented/Researched such as The shunting Yard algorithm and the process of converting infix to postfix.If you apply the commands in this document and run in the correct enviroment you will be successfully able to run this program and build NFAs.  
+
+## Resources 
+
+- The code Implemented/Tweaked was sourced from online vidoes delivered by Dr. Ian Mcloughlin which shaped the foundation to this project.
 
 ## References
 - [1] Python  https://www.python.org/dev/peps/pep-0008/
