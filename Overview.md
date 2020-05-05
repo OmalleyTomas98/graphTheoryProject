@@ -299,3 +299,6 @@ ________________________________________________________________________________
 - [9] Python https://www.python.org/doc/essays/blurb
 - [10] vi https://www.guru99.com/the-vi-editor.html
 - [11] Google Cloud https://cloud.google.com/gcp/getting-started
+- [12] Python Command Line Arguments https://docs.python.org/3/library/argparse.html
+
+
