@@ -270,6 +270,16 @@ ________________________________________________________________________________
   </a>
 </p> 
 
+
+## Command Line Arguments 
+  - For ease of the use the user may refer to command line arguments when lost.Underrneath you will find a list of command line argumnets . For example entering ' Menu.py -h  ' in the command line will display a help guide top the screen 
+
+ | Argument  | Purpose |
+| --- | --- |
+| `-h` | Help command lists what parameters to enter  |
+
+
+
 ## Conclusion
 - Overall I was pleased with the application I created and the obstacles of learning a new computing language(Python) and the many algorithms implemented/Researched such as The shunting Yard algorithm and the process of converting infix to postfix.If you apply the commands in this document and run in the correct enviroment you will be successfully able to run this program and build NFAs.  
 
