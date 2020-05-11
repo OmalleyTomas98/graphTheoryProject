@@ -23,7 +23,7 @@ re package from the Python standard library nor any other external library.
 | `Module` | Graph Theory  |
 | `Program` | NFA Graph Theory Project|
 | `Langauge` | Python 3|
-| `Weighting` | 50% |
+| `Weighting` | 100% |
 | `Year of Study` | 3 |
 
 
