@@ -1,11 +1,12 @@
-# Author     : Tomas O'Malley 
+# Author     : Tomas O'Malley
 # Student ID : G00361128 (@gmit.ie)
 # Course     : Software Development GA_KSOAG_H08 Y3
 # Module     : Graph Theory  -(48901)
-# Program    : NFA Builder 
+# Program    : NFA Builder
 # Due Date 	 : 03/04/2020
 
 import Regex
+import argparser
 
 print("**********************************************************")
 print("*		                                         *")
