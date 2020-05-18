@@ -6,7 +6,7 @@
     <img src="graphTheoryImages/googleCloud.jpg" alt="" width="1000" height="500">
   </a>
   
-## Description
+## Introduction
  <p align="left">
 You must write a program in the Python programming language [2] that can
 build a non-deterministic finite automaton (NFA) from a regular expression,
@@ -30,7 +30,9 @@ re package from the Python standard library nor any other external library.
 ## Documentation
 - A .pdf version of the document you are currently reading is currently avaiable in this Repo for offline use.
  
-## Installation
+## Run
+
+- Here are a number of steps to follow to download and run the application.
  
 - Download [git](https://git-scm.com/downloads) to your machine if not already installed.
 - Download [python](https://www.python.org/downloads/) to your machine if not already installed.
@@ -58,7 +60,7 @@ ________________________________________________________________________________
 
 
 
-## Research
+## Algorithms
 - **Python**
   - Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages
   
@@ -145,7 +147,7 @@ ________________________________________________________________________________
       ``` 
       
       
-## Testing  
+## Test
   - I conducted a series of short matching tests at the end of the development to determine if the Regular expression operators were working correctly. 
   
   - Here are the examples I tested in the Regex.py File
